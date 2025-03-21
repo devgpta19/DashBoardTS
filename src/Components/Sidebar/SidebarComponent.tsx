@@ -20,7 +20,7 @@ interface Props {
 }
 
 const SidebarComponent = ({ isMobile, open, toggleSidebar }: Props) => {
-  var [checked, setChecked] = React.useState<boolean>(true);
+  const [checked, setChecked] = React.useState<boolean>(true);
 
   open = !open;
 
