@@ -1,0 +1,49 @@
+// IMPORT
+@use "sass:math";
+
+// SCREEN RESOLUTION
+// $mobile : 768px;
+// $tablet : 1024px;
+
+// BACKGROUND COLORS
+$theme-color : #200032;
+$cardsBg-color : #00ff9d;
+$chartsBg-color : #005eff;
+$cal-rtBg-color : #ffd900;
+$blackBg-color : #000000;
+$whiteBg-color : #ffffff;
+$sideBar-color : rgb(47, 41, 41);
+$headerBg-color : #606060;
+
+// SCREEN Height width
+$screen-width : 100vw;
+$screen-height : 100vh;
+
+// SIDEBAR
+$CloseSidebar-width : 65px;
+$OpenSideBar-width : 240px;
+
+// HEADER
+$header-height : 48px;
+$header-width : calc(100% - #{$CloseSidebar-width});
+
+// FLEX
+$Uni-gap : 10px;
+
+// ASPECT RATIO
+$ratio : math.div(16, 9);
+
+// PADDING
+$paddingX : 5px;
+$paddingY : 5px;
+
+// MARGIN
+$marginX : 5px;
+$marginY : 0;
+
+// SCROLLBAR
+$scrollbar-width : 8px;
+
+// BORDER
+$border : 5px;
+$border-color :$blackBg-color;

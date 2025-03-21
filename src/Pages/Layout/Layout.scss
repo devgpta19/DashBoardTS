@@ -1,0 +1,83 @@
+@use "sass:math";
+@use "/src/Sass/mixin" as m;
+@use "/src/Sass/variable" as variable;
+@use "/src/Components/Cards/card.scss" as cards;
+
+$mobile: 768px;
+$width: calc(100vw-#{variable.$CloseSidebar-width});
+
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+// .DrawerBox {
+//   height: 100%;
+//   width: 250px;
+//   background-color: variable.$sideBar-color;
+// }
+
+.ResponsiveLayout {
+  height: 100vh;
+  display: flex;
+
+  .MainContent {
+    margin-left: variable.$CloseSidebar-width;
+    // background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease-in-out;
+    flex-grow: 1;
+    min-height: 100%;
+  }
+
+  .Navbar {
+    @include m.breakpoint('medium') {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: red;
+      height: 60px;
+    }
+  }
+
+  .Header {
+    @include m.breakpoint('medium') {
+      height: variable.$header-height;
+      background-color: variable.$headerBg-color;
+      padding: variable.$paddingY variable.$paddingX;
+      color: variable.$whiteBg-color;
+    }
+  }
+
+  .CardsSection {
+    background-color: variable.$theme-color;
+    
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .ChartSection {
+    background-color: variable.$theme-color;
+  }
+
+  .CalendarRT {
+    background-color: variable.$theme-color;
+  }
+
+  @media (max-width: $mobile) {
+    .MainContent {
+      margin-top: 50px;
+      margin-left: 0;
+    }
+  }
+
+  @include m.breakpoint('medium') {
+    .MainContent {
+      margin-left: variable.$CloseSidebar-width;
+    }
+  }
+}
