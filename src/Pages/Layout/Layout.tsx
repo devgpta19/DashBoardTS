@@ -40,14 +40,15 @@ const ResponsiveLayout = () => {
       )} */}
 
       {isMobile && (
-        <AppBar position="fixed" className="AppBar">
+        <AppBar position="fixed" sx={{bgcolor:"black"}} className="AppBar">
           <Toolbar>
-            <IconButton edge="start" color="inherit" onClick={toggleSidebar}>
-              <MenuIcon />
+            <IconButton edge="start" onClick={toggleSidebar}>
+              <MenuIcon sx={{ color:"white"}} />
             </IconButton>
-            <Typography variant="h6" sx={{ flexGrow: 1, textAlign: "center" }}>
+            <Header/>
+            {/* <Typography variant="h6" sx={{ flexGrow: 1, textAlign: "center" }}>
               Navbar
-            </Typography>
+            </Typography> */}
           </Toolbar>
         </AppBar>
       )}
