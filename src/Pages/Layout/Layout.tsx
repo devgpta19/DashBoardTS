@@ -16,6 +16,8 @@ import SidebarComponent from "../../Components/Sidebar/SidebarComponent";
 import "./Layout.scss";
 import "../../Components/Sidebar/SidebarComponent.scss";
 
+import Header from "../../Components/Header/Header";
+
 const ResponsiveLayout = () => {
   
   const isMobile = useMediaQuery<boolean>("(max-width:768px)");
@@ -57,7 +59,7 @@ const ResponsiveLayout = () => {
       <Grid2 className="MainContent">
         {!isMobile && (
           <Box className="Header">
-            <Typography variant="h6">Header</Typography>
+            <Header />
           </Box>
         )}
 

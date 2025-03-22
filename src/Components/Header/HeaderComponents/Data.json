@@ -1,0 +1,15 @@
+{
+  "name": "Dev",
+  "count": 2,
+  "menuItems": [
+    { "label": "Settings" },
+    { "label": "Profile" },
+    { "label": "Logout" }
+  ],
+  "options": [
+    { "label": "Market1" },
+    { "label": "Market2" },
+    { "label": "Market3" }
+  ]
+
+}

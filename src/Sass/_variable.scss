@@ -6,12 +6,14 @@
 // $tablet : 1024px;
 
 // BACKGROUND COLORS
-$theme-color : #200032;
-$cardsBg-color : #00ff9d;
-$chartsBg-color : #005eff;
+$primary-color : #0F1214;
+$theme-color : #884545;
+$cardsBg-color : #1adb91;
+$chartsBg-color : #c6d4eb;
 $cal-rtBg-color : #ffd900;
 $blackBg-color : #000000;
 $whiteBg-color : #ffffff;
+$redBg-color : #c71414;
 $sideBar-color : rgb(47, 41, 41);
 $headerBg-color : #606060;
 
@@ -46,4 +48,9 @@ $scrollbar-width : 8px;
 
 // BORDER
 $border : 5px;
+$border-radius : 8px;
 $border-color :$blackBg-color;
+
+//icon
+$icon-width:32px;
+$icon-height:32px;
