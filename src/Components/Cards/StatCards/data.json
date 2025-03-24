@@ -1,0 +1,38 @@
+[
+    {
+      "title": "Revenue",
+      "value": "10k",
+      "interval": "Last 7 days",
+      "trend": "up",
+      "data": [12, 15, 10, 18, 20, 25, 30]
+    },
+    {
+      "title": "Users",
+      "value": "5.2k",
+      "interval": "Last 7 days",
+      "trend": "down",
+      "data": [8, 12, 15, 10, 5, 7, 4]
+    },
+    {
+      "title": "Orders",
+      "value": "1.8k",
+      "interval": "Last 7 days",
+      "trend": "neutral",
+      "data": [3, 5, 7, 6, 8, 9, 7]
+    },
+    {
+      "title": "Engagement",
+      "value": "75%",
+      "interval": "Last 7 days",
+      "trend": "up",
+      "data": [60, 62, 65, 70, 72, 75, 78]
+    },
+    {
+      "title": "Retention",
+      "value": "85%",
+      "interval": "Last 7 days",
+      "trend": "down",
+      "data": [90, 88, 87, 86, 85, 84, 83]
+    }
+  ]
+  

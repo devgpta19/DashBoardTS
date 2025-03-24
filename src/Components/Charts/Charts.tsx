@@ -1,15 +1,17 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import './Charts.scss';
+import SessionsChart from "./LineChart/SessionsChart";
+import BarChart from "../Charts/BarChart/Barchart";
 
 const GridLayout: React.FC = () => {
   return (
     <Box className="BoxLayout">
       <Box className="BoxItem Boxleft">
-        <Typography variant="h5">Chart 1</Typography>
+        <SessionsChart/>
       </Box>
       <Box className="BoxItem Boxright">
-        <Typography variant="h5">Chart 2</Typography>
+        <BarChart/>
       </Box>
     </Box>
   );

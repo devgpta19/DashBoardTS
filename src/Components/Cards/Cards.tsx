@@ -1,15 +1,23 @@
 import React, { useRef, WheelEvent } from "react";
-import { Card, CardContent, Typography, Box } from "@mui/material";
-import "./card.scss";
+import { Card, CardContent, Box } from "@mui/material";
+import StatCard from "./StatCards/StatCards";
+import statsData from "./StatCards/data.json"; // Import the JSON file
+import "./card.scss"
+
+// Define the allowed values for trend
+type TrendType = "up" | "down" | "neutral";
+
+// Ensure data is correctly typed
+const formattedStatsData = statsData.map((item) => ({
+  ...item,
+  trend: ["up", "down", "neutral"].includes(item.trend) ? (item.trend as TrendType) : "neutral",
+}));
 
 const SimpleCard: React.FC = () => {
-  const arr: number[] = [1, 2, 3, 4, 5];
-
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const handleScroll = (e: WheelEvent<HTMLDivElement>) => {
     const container = scrollRef.current;
-
     if (container) {
       const { scrollLeft, scrollWidth, clientWidth } = container;
       const atLeftEdge = scrollLeft === 0;
@@ -24,11 +32,10 @@ const SimpleCard: React.FC = () => {
 
   return (
     <Box className="Box" ref={scrollRef} onWheel={handleScroll}>
-      {arr.map((item) => (
-        <Card className="Card" key={item} sx={{ p: 0 }}>
-          <CardContent>
-            <Typography variant="h5">Card {item}</Typography>
-            <Typography variant="body2">Card Content</Typography>
+      {formattedStatsData.map((item, index) => (
+        <Card className="Card" key={index}>
+          <CardContent sx={{ padding: 0, margin: 0 }}>
+            <StatCard {...item} />
           </CardContent>
         </Card>
       ))}

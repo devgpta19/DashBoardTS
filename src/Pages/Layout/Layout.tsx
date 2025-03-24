@@ -4,7 +4,6 @@ import {
   Box,
   AppBar,
   Toolbar,
-  Typography,
   IconButton,
   useMediaQuery,
   Grid2,

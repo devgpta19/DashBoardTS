@@ -7,22 +7,25 @@
   flex-direction: column;
   padding: variable.$paddingY variable.$paddingX;
   color : variable.$whiteBg-color;
-  height: 1000px;
   .BoxItem {
     height: 50%;
     width: calc(#{cards.$card-width}*5 + variable.$CloseSidebar-width + #{variable.$marginX}*8);
     background-color: variable.$chartsBg-color;
     margin: variable.$marginX variable.$marginX;
+    border-radius: #{variable.$border-radius};
+    border-bottom-left-radius: #{variable.$border-radius};
+    border-bottom-left-radius: #{variable.$border-radius};
   }
   
   @include m.breakpoint('medium') {
     flex-direction: row;
-    height: calc((#{cards.$card-width}*2 + #{variable.$marginX}*2)/#{variable.$ratio});
+    // height: calc((#{cards.$card-width}*2 + #{variable.$marginX}*2)/#{variable.$ratio});
     
     .BoxItem {
-      height: calc((#{cards.$card-width}*2 + #{variable.$marginX}*2)/#{variable.$ratio});
+      // height: calc((#{cards.$card-width}*2 + #{variable.$marginX}*2)/#{variable.$ratio});
+      
       // margin: variable.$marginY variable.$marginX;
-      padding: #{variable.$paddingY} #{variable.$paddingX};
+      // padding: #{variable.$paddingY} #{variable.$paddingX};
       
       &.Boxleft {
         width: calc(#{cards.$card-width}*3 + #{variable.$marginX}*4);
