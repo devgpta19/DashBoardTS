@@ -18,7 +18,6 @@ import "../../Components/Sidebar/SidebarComponent.scss";
 import Header from "../../Components/Header/Header";
 
 const ResponsiveLayout = () => {
-  
   const isMobile = useMediaQuery<boolean>("(max-width:768px)");
   const [open, setOpen] = useState<boolean>(false);
   const toggleSidebar = (): void => setOpen(!open);
@@ -38,13 +37,14 @@ const ResponsiveLayout = () => {
         </AppBar>
       )} */}
 
+      {/* Navbar for Mobile */}
       {isMobile && (
-        <AppBar position="fixed" sx={{bgcolor:"black"}} className="AppBar">
+        <AppBar position="fixed" sx={{ bgcolor: "black" }} className="AppBar">
           <Toolbar>
             <IconButton edge="start" onClick={toggleSidebar}>
-              <MenuIcon sx={{ color:"white"}} />
+              <MenuIcon sx={{ color: "white" }} />
             </IconButton>
-            <Header/>
+            <Header />
             {/* <Typography variant="h6" sx={{ flexGrow: 1, textAlign: "center" }}>
               Navbar
             </Typography> */}
@@ -53,7 +53,11 @@ const ResponsiveLayout = () => {
       )}
 
       {/* Sidebar (Passing props to SidebarComponent) */}
-      <SidebarComponent isMobile={isMobile} open={open} toggleSidebar={toggleSidebar} />
+      <SidebarComponent
+        isMobile={isMobile}
+        open={open}
+        toggleSidebar={toggleSidebar}
+      />
 
       {/* Main Content */}
       <Grid2 className="MainContent">

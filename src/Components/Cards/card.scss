@@ -10,7 +10,7 @@ $card-width: calc(
 );
 $card-height: calc(#{$card-width}/#{variable.$ratio});
 
-$mini-cardWidth: 100px;
+$mini-cardWidth: 120px;
 $calculated-width: calc(
   (
       #{variable.$screen-width} - (10 * #{variable.$marginX}) - (2 * #{variable.$paddingX})
@@ -22,21 +22,31 @@ $mini-cardHeight: calc(#{$mini-cardWidth}/#{variable.$ratio});
 .Box {
   margin: 0 #{variable.$marginX};
   background-color: variable.$theme-color;
-  height: 100%;
+  height: $card-height;
+  // height: 100%;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
-  background-color: teal;
 
   .Card {
+    width: #{$card-width};
+    height: $card-height;
     flex-grow: 1;
     flex-shrink: 0;
     margin: #{variable.$marginX};
-    background-color: aqua;
+    // background-color: aqua;
     min-height: $mini-cardHeight;
     min-width: $mini-cardWidth;
     border-radius: #{variable.$border-radius};
+    height: fit-content;
+
+    .CardContent{
+      padding: 0;
+      margin: 0;
+    }
   }
+
+
 
   @include m.breakpoint("medium") {
     height: 100%;
@@ -50,8 +60,8 @@ $mini-cardHeight: calc(#{$mini-cardWidth}/#{variable.$ratio});
     flex-wrap: nowrap;
 
     .Card {
-      width: #{$card-width};
-      height: #{$card-height};
+      // width: #{$card-width};
+      // height: #{$card-height};
       // padding: variable.$paddingY variable.$paddingX;
       // border-radius: #{variable.$border};
     }

@@ -4,7 +4,7 @@
       "value": "10k",
       "interval": "Last 7 days",
       "trend": "up",
-      "data": [12, 15, 10, 18, 20, 25, 30]
+      "data": [12, 15, 10, 18, 20, 25, 30 ]
     },
     {
       "title": "Users",

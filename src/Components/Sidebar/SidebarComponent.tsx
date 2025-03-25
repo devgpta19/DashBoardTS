@@ -111,6 +111,7 @@ const SidebarComponent = ({ isMobile, open, toggleSidebar }: Props) => {
         // SIDEBAR FOR DESKTOP AND GREATER RESOLUTIONS
         <Grid2
           className="Sidebar"
+          sx={{zIndex:"9"}}
           onMouseEnter={!isMobile && open ? toggleSidebar : undefined}
           onMouseLeave={!isMobile && !open ? toggleSidebar : undefined}
         >

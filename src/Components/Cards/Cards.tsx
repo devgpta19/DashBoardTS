@@ -34,7 +34,7 @@ const SimpleCard: React.FC = () => {
     <Box className="Box" ref={scrollRef} onWheel={handleScroll}>
       {formattedStatsData.map((item, index) => (
         <Card className="Card" key={index}>
-          <CardContent sx={{ padding: 0, margin: 0 }}>
+          <CardContent className="CardContent">
             <StatCard {...item} />
           </CardContent>
         </Card>

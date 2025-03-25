@@ -17,20 +17,20 @@ export type StatCardProps = {
   data: number[];
 };
 
-function getDaysInMonth(month: number, year: number) {
-  const date = new Date(year, month, 0);
-  const monthName = date.toLocaleDateString("en-US", {
-    month: "short",
-  });
-  const daysInMonth = date.getDate();
-  const days = [];
-  let i = 1;
-  while (days.length < daysInMonth) {
-    days.push(`${monthName} ${i}`);
-    i += 1;
-  }
-  return days;
-}
+// function getDaysInMonth(month: number, year: number) {
+//   const date = new Date(year, month, 0);
+//   const monthName = date.toLocaleDateString("en-US", {
+//     month: "short",
+//   });
+//   const daysInMonth = date.getDate();
+//   const days = [];
+//   let i = 1;
+//   while (days.length < daysInMonth) {
+//     days.push(`${monthName} ${i}`);
+//     i += 1;
+//   }
+//   return days;
+// }
 
 function AreaGradient({ color, id }: { color: string; id: string }) {
   return (
@@ -51,7 +51,7 @@ export default function StatCard({
   data,
 }: StatCardProps) {
   const theme = useTheme();
-  const daysInWeek = getDaysInMonth(4, 2024);
+  // const daysInWeek = getDaysInMonth(4, 2024);
 
   const trendColors = {
     up:
@@ -85,12 +85,10 @@ export default function StatCard({
         flexGrow: 1,
         margin: 0,
         padding: 0,
-        overflow: "hidden",
-        position: "relative",
       }}
     >
-      <CardContent sx={{ padding: 1, margin: "0", position: "relative" }}>
-        <Typography component="h6" variant="subtitle2" gutterBottom>
+      <CardContent sx={{ padding: 1, margin: "0" }}>
+        <Typography component="h1" variant="subtitle2" gutterBottom>
           {title}
         </Typography>
         <Stack
@@ -111,7 +109,7 @@ export default function StatCard({
               {interval}
             </Typography>
           </Stack>
-          <Box sx={{ width: "100%", height: 50}}>
+          {/* <Box sx={{ width: "100%", height: 50}}>
             <SparkLineChart
               sx={{
                 // bgcolor: "black",
@@ -128,6 +126,30 @@ export default function StatCard({
               xAxis={{
                 scaleType: "band",
                 data: daysInWeek, // Use the correct property 'data' for xAxis
+              }}
+            >
+              <AreaGradient color={chartColor} id={`area-gradient-${value}`} />
+            </SparkLineChart>
+          </Box> */}
+
+          <Box sx={{ width: "100%", height: 50, flexGrow: 1 }}>
+            <SparkLineChart
+              sx={{
+                [`& .${areaElementClasses.root}`]: {
+                  fill: `url(#area-gradient-${value})`,
+                },
+              }}
+              colors={[chartColor]}
+              data={data}
+              area
+              showHighlight
+              showTooltip
+              xAxis={{
+                scaleType: "point", // Use "point" to keep spacing consistent
+                data: Array.from(
+                  { length: data.length },
+                  (_, i) => `Day ${i + 1}`
+                ), // Generate labels dynamically
               }}
             >
               <AreaGradient color={chartColor} id={`area-gradient-${value}`} />
