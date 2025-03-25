@@ -11,15 +11,15 @@ $cal-rtHeight: calc((#{cards.$card-width}*2.5 + #{variable.$marginX}*3)/#{variab
   flex-direction: column;
   padding: variable.$paddingY variable.$paddingX;
   margin: variable.$marginX variable.$marginY;
-  height: 1000px;
+  // height: 1000px;
   
   .GridItem4 {
-    height: 50%;
+    // height: 50%;
     width: calc(#{cards.$card-width}*5 + variable.$CloseSidebar-width + #{variable.$marginX}*8);
     padding: variable.$paddingY variable.$paddingX;
     background-color: variable.$cal-rtBg-color;
     margin: variable.$marginX variable.$marginX;
-    
+    border-radius: variable.$border-radius;
   }
   
   @include m.breakpoint('medium') {
@@ -28,6 +28,7 @@ $cal-rtHeight: calc((#{cards.$card-width}*2.5 + #{variable.$marginX}*3)/#{variab
     
     .GridItem4 {
       height: $cal-rtHeight;
+      // height: fit-content;
       width: calc((#{cards.$card-width}*2.5 + #{variable.$marginX}*5));
       margin: variable.$marginY variable.$marginX;
     }

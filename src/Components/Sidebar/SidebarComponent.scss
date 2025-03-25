@@ -84,7 +84,7 @@ $SideElement-width: calc(#{variable.$OpenSideBar-width});
 // }
 
 .ThemeChanger {
-  background-color: variable.$sideBar-color;
+  background-color: transparent;
   margin: #{variable.$marginX} #{variable.$marginX};
   height: 20px;
   display: flex;

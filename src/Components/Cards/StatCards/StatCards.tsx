@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
@@ -16,21 +15,6 @@ export type StatCardProps = {
   trend: "up" | "down" | "neutral";
   data: number[];
 };
-
-// function getDaysInMonth(month: number, year: number) {
-//   const date = new Date(year, month, 0);
-//   const monthName = date.toLocaleDateString("en-US", {
-//     month: "short",
-//   });
-//   const daysInMonth = date.getDate();
-//   const days = [];
-//   let i = 1;
-//   while (days.length < daysInMonth) {
-//     days.push(`${monthName} ${i}`);
-//     i += 1;
-//   }
-//   return days;
-// }
 
 function AreaGradient({ color, id }: { color: string; id: string }) {
   return (
@@ -51,7 +35,6 @@ export default function StatCard({
   data,
 }: StatCardProps) {
   const theme = useTheme();
-  // const daysInWeek = getDaysInMonth(4, 2024);
 
   const trendColors = {
     up:
@@ -80,14 +63,11 @@ export default function StatCard({
 
   return (
     <Card
+      className="Card-StatCard"
       variant="outlined"
-      sx={{
-        flexGrow: 1,
-        margin: 0,
-        padding: 0,
-      }}
+      sx={{}}
     >
-      <CardContent sx={{ padding: 1, margin: "0" }}>
+      <CardContent className="CardContent-StatCard" sx={{ padding: 1, margin: "0" }}>
         <Typography component="h1" variant="subtitle2" gutterBottom>
           {title}
         </Typography>
@@ -109,30 +89,7 @@ export default function StatCard({
               {interval}
             </Typography>
           </Stack>
-          {/* <Box sx={{ width: "100%", height: 50}}>
-            <SparkLineChart
-              sx={{
-                // bgcolor: "black",
-                width: "100%",
-                [`& .${areaElementClasses.root}`]: {
-                  fill: `url(#area-gradient-${value})`,
-                },
-              }}
-              colors={[chartColor]}
-              data={data}
-              area
-              showHighlight
-              showTooltip
-              xAxis={{
-                scaleType: "band",
-                data: daysInWeek, // Use the correct property 'data' for xAxis
-              }}
-            >
-              <AreaGradient color={chartColor} id={`area-gradient-${value}`} />
-            </SparkLineChart>
-          </Box> */}
-
-          <Box sx={{ width: "100%", height: 50, flexGrow: 1 }}>
+          <Box sx={{ minHeight: "50px" }} className="ChartLine">
             <SparkLineChart
               sx={{
                 [`& .${areaElementClasses.root}`]: {

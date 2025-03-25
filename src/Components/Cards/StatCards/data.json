@@ -4,7 +4,7 @@
       "value": "10k",
       "interval": "Last 7 days",
       "trend": "up",
-      "data": [12, 15, 10, 18, 20, 25, 30 ]
+      "data": [12, 15, 10, 18, 20, 25, 30]
     },
     {
       "title": "Users",
@@ -18,14 +18,14 @@
       "value": "1.8k",
       "interval": "Last 7 days",
       "trend": "neutral",
-      "data": [3, 5, 7, 6, 8, 9, 7]
+      "data": [10, 15, 20, 17, 25, 15, 10]
     },
     {
       "title": "Engagement",
       "value": "75%",
       "interval": "Last 7 days",
       "trend": "up",
-      "data": [60, 62, 65, 70, 72, 75, 78]
+      "data": [15, 62, 65, 70, 100, 75, 150]
     },
     {
       "title": "Retention",

@@ -10,46 +10,41 @@ $card-width: calc(
 );
 $card-height: calc(#{$card-width}/#{variable.$ratio});
 
-$mini-cardWidth: 120px;
+$mini-cardWidth: 100px;
 $calculated-width: calc(
   (
       #{variable.$screen-width} - (10 * #{variable.$marginX}) - (2 * #{variable.$paddingX})
     ) / 5
 );
 $mini-cardHeight: calc(#{$mini-cardWidth}/#{variable.$ratio});
-// $mini-cardHeight: fit-content;
 
 .Box {
-  margin: 0 #{variable.$marginX};
+  margin-top: variable.$marginX;
+  padding: variable.$paddingX;
   background-color: variable.$theme-color;
-  height: $card-height;
   // height: 100%;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
 
   .Card {
-    width: #{$card-width};
-    height: $card-height;
     flex-grow: 1;
     flex-shrink: 0;
-    margin: #{variable.$marginX};
+    margin: 0 #{variable.$marginX};
+    margin-top: variable.$marginX;
     // background-color: aqua;
     min-height: $mini-cardHeight;
     min-width: $mini-cardWidth;
-    border-radius: #{variable.$border-radius};
-    height: fit-content;
+    border-radius: #{variable.$border};
 
-    .CardContent{
+    .CardContent {
       padding: 0;
       margin: 0;
     }
   }
 
-
-
   @include m.breakpoint("medium") {
-    height: 100%;
+    // height: 100%;
     width: 100%;
     background-color: variable.$theme-color;
     padding: 0 variable.$paddingX;
@@ -60,10 +55,26 @@ $mini-cardHeight: calc(#{$mini-cardWidth}/#{variable.$ratio});
     flex-wrap: nowrap;
 
     .Card {
-      // width: #{$card-width};
-      // height: #{$card-height};
-      // padding: variable.$paddingY variable.$paddingX;
-      // border-radius: #{variable.$border};
+      background-color: aqua;
+      width: #{$card-width};
+      height: #{$card-height};
     }
+  }
+}
+
+@include m.breakpoint("medium") {
+  .Card-StatCard .CardContent-StatCard{
+    width: #{$card-width};
+    // height: calc($card-width / variable.$ratio);
+  }
+
+  .ChartLine {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-grow: 1;
   }
 }
