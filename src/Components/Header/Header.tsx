@@ -10,7 +10,7 @@ import "./Header.scss";
 
 const ThreeSections: React.FC = () => {
   return (
-    <Stack className="section-stack">
+    <Stack className="section-stack" sx={{ bgcolor: "var(--primary-color)" }}>
       <Box className="section-box section-one">
         <h6 className="gradient-text">Hi, {data.name}</h6>
       </Box>

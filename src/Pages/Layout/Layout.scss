@@ -59,7 +59,7 @@ $width: calc(100vw-#{variable.$CloseSidebar-width});
   .Header {
     @include m.breakpoint('medium') {
       // height: variable.$header-height;
-      // background-color: variable.$headerBg-color;
+      background-color: variable.$primary-color;
       // padding: variable.$paddingY variable.$paddingX;
       color: variable.$whiteBg-color;
     }
